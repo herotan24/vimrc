@@ -7,6 +7,7 @@ set rtp+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -23,6 +24,16 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " cfg of voice"
-set noeb
-set vb
+ set noeb
+ set vb
+
+" NERDTree setting 
+"
+" open a NERDTree automatically when vim starts up
+" autocmd vimenter * NERDTree
+" open NERDTree on startup, and have my cursor start in the other window
+" autocmd vimenter * wincmd p
+" open a NERDTree automatically when vim starts up if no files were specified
+ autocmd StdinReadPre * let s:std_in=1
+ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
