@@ -26,6 +26,13 @@ filetype plugin indent on    " required
 " cfg of common
  set nu
 
+" cfg of tab
+ set autoindent
+ set tabstop=4
+ set softtabstop=4
+ set shiftwidth=4
+ set expandtab
+
 " cfg of voice"
  set noeb
  set vb
