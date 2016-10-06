@@ -23,6 +23,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" cfg of common
+ set nu
+
 " cfg of voice"
  set noeb
  set vb
