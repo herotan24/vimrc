@@ -32,6 +32,7 @@ Plugin 'tpope/vim-fugitive'   " to add help file for fugittive,
                               " run command below
                               " vim -u NONE -c "helptags vim-fugitive/doc" -c q
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -105,6 +106,19 @@ endif
 
 set nu    " print out the line number
 colorscheme desert
+
+" NERDTree git indicator
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "!",
+    \ "Staged"    : "+",
+    \ "Untracked" : "?",
+    \ "Renamed"   : "»",
+    \ "Unmerged"  : "=",
+    \ "Deleted"   : "-",
+    \ "Dirty"     : "x",
+    \ "Clean"     : "o",
+    \ "Unknown"   : "*",
+    \ }
 
 " key-maps
 nnoremap <unique> [q :cprev<CR>
