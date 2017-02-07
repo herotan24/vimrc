@@ -104,3 +104,9 @@ endif
 set nu    " print out the line number
 colorscheme desert
 
+nnoremap <unique> [q :cprev<CR>
+nnoremap <unique> ]q :cnext<CR>
+
+nnoremap <unique> [Q :cfirst<CR>
+nnoremap <unique> ]Q :clast<CR>
+
