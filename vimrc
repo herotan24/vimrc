@@ -31,6 +31,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'   " to add help file for fugittive, 
                               " run command below
                               " vim -u NONE -c "helptags vim-fugitive/doc" -c q
+Plugin 'scrooloose/nerdtree'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
@@ -104,9 +106,11 @@ endif
 set nu    " print out the line number
 colorscheme desert
 
+" key-maps
 nnoremap <unique> [q :cprev<CR>
 nnoremap <unique> ]q :cnext<CR>
-
 nnoremap <unique> [Q :cfirst<CR>
 nnoremap <unique> ]Q :clast<CR>
+
+nnoremap <unique> <C-n> :NERDTreeToggle<CR>
 
