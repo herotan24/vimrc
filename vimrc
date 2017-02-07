@@ -28,7 +28,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'   " to add help file for fugittive, 
+                              " run command below
+                              " vim -u NONE -c "helptags vim-fugitive/doc" -c q
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
