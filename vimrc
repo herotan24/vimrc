@@ -20,6 +20,24 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" for vundle configuration
+filetype off                  " required before vundle
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+
+call vundle#end()
+
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
