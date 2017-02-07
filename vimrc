@@ -25,7 +25,10 @@ set backspace=indent,eol,start
 
 set history=200		" keep 200 lines of command line history
 set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
+                        " (on the right side of the status line at the bottom)
+set showcmd		" display incomplete commands 
+                        " (show commands typing in command-mode, or show status
+                        " when selecting in visual[block] mode)
 set wildmenu		" display completion matches in a status line
 
 set ttimeout		" time out for key codes
@@ -59,7 +62,7 @@ map Q gq
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 " Revert with ":iunmap <C-U>".
-inoremap <C-U> <C-G>u<C-U>
+" inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine.  By enabling it you
 " can position the cursor, Visually select and scroll with the mouse.
