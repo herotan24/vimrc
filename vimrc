@@ -44,6 +44,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'kien/ctrlp.vim'
 
+Plugin 'majutsushi/tagbar'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
@@ -144,6 +146,7 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 nnoremap <silent> <F8> :TlistToggle<CR>
+nnoremap <silent> <F7> :TagbarToggle<CR>
 
 " air line
 set laststatus=2
