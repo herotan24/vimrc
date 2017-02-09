@@ -33,6 +33,17 @@ Plugin 'tpope/vim-fugitive'   " to add help file for fugittive,
                               " vim -u NONE -c "helptags vim-fugitive/doc" -c q
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'vim-scripts/a.vim.git'
+
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tomasr/molokai'
+
+Plugin 'jlanzarotta/bufexplorer'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'vim-scripts/taglist.vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -104,8 +115,9 @@ if &t_Co > 2 || has("gui_running")
   let c_comment_strings=1
 endif
 
-set nu    " print out the line number
-colorscheme desert
+set hlsearch    " highlight the search result
+set nu          " print out the line number
+colorscheme molokai
 
 " NERDTree git indicator
 let g:NERDTreeIndicatorMapCustom = {
@@ -121,10 +133,22 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 
 " key-maps
-nnoremap <unique> [q :cprev<CR>
-nnoremap <unique> ]q :cnext<CR>
-nnoremap <unique> [Q :cfirst<CR>
-nnoremap <unique> ]Q :clast<CR>
+nnoremap [q :cprev<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [Q :cfirst<CR>
+nnoremap ]Q :clast<CR>
 
-nnoremap <unique> <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+" air line
+set laststatus=2
+let g:airline#extensions#tabline#enable = 1
+let g:airline_theme = "badwolf"
+
+" taglist
+let g:Tlist_Use_Right_Window = 1
+let g:Tlist_Exit_OnlyWindow = 1
+let g:Tlist_GainFocus_On_ToggleOpen = 1
+let g:Tlist_Hightlight_On_BufEnter = 1
+let g:Tlist_Auto_Highlight_Tag = 1
 
