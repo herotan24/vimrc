@@ -28,9 +28,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'   " to add help file for fugittive, 
-                              " run command below
-                              " vim -u NONE -c "helptags vim-fugitive/doc" -c q
+Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-scripts/a.vim.git'
