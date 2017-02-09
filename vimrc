@@ -138,7 +138,13 @@ nnoremap ]q :cnext<CR>
 nnoremap [Q :cfirst<CR>
 nnoremap ]Q :clast<CR>
 
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <F8> :TlistToggle<CR>
 
 " air line
 set laststatus=2
