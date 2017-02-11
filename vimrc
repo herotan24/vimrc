@@ -49,6 +49,8 @@ Plugin 'vim-scripts/TaskList.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
+Plugin 'vim-scripts/Mark'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
