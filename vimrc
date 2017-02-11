@@ -154,14 +154,14 @@ nnoremap          <leader>td :TagbarToggle<CR> :TaskList<CR>
 
 " air line
 set laststatus=2
-let g:airline#extensions#tabline#enable = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = "badwolf"
 
 " taglist
 let g:Tlist_Use_Right_Window = 1
 let g:Tlist_Exit_OnlyWindow = 1
 let g:Tlist_GainFocus_On_ToggleOpen = 1
-let g:Tlist_Hightlight_On_BufEnter = 1
+let g:Tlist_Highlight_Tag_On_BufEnter = 1
 let g:Tlist_Auto_Highlight_Tag = 1
 let g:Tlist_Close_On_Select = 1
 
