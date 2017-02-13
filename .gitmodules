@@ -49,3 +49,6 @@
 [submodule "bundle/Mark"]
 	path = bundle/Mark
 	url = https://github.com/vim-scripts/Mark.git
+[submodule "bundle/cscope.vim"]
+	path = bundle/cscope.vim
+	url = https://github.com/vim-scripts/cscope.vim.git
