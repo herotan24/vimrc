@@ -1,0 +1,2 @@
+# if you want to ignore file for git
+.git/info/exclude -- add filename here
