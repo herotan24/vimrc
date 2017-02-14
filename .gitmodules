@@ -52,3 +52,6 @@
 [submodule "bundle/cscope.vim"]
 	path = bundle/cscope.vim
 	url = https://github.com/vim-scripts/cscope.vim.git
+[submodule "bundle/project.tar.gz"]
+	path = bundle/project.tar.gz
+	url = https://github.com/vim-scripts/project.tar.gz.git

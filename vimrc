@@ -51,6 +51,7 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'vim-scripts/Mark'
 Plugin 'vim-scripts/cscope.vim'
+Plugin 'vim-scripts/project.tar.gz'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
