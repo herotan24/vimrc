@@ -24,13 +24,18 @@ set nocompatible
 filetype off                  " required before vundle
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has("unix")
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+elseif has("win32")
+  set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
+  call vundle#begin('$HOME/vimfiles/bundle/')
+endif
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-scripts/a.vim.git'
 
 Plugin 'Valloric/YouCompleteMe'
@@ -132,7 +137,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "!",
     \ "Staged"    : "+",
     \ "Untracked" : "?",
-    \ "Renamed"   : "»",
+    \ "Renamed"   : ">",
     \ "Unmerged"  : "=",
     \ "Deleted"   : "-",
     \ "Dirty"     : "x",
