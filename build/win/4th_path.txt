@@ -1,1 +1,4 @@
 C:\bin\vim\vim80;C:\bin\cmder_mini;C:\bin;
+
+install C:\bin\vim\vim80
+data C:\Users\Administrator\vimfiles
