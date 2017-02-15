@@ -1,0 +1,1 @@
+C:\bin\vim\vim80;C:\bin\cmder_mini;C:\bin;
