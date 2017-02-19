@@ -217,7 +217,12 @@ let g:ctrlp_custom_ignore = {
 " let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 " let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+if has('Win32')
+	let g:ycm_global_ycm_extra_conf = 'C:\Users\Administrator\vimfiles\.ycm_extra_conf.py'
+else
+	let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+endif
+
 " 
 " " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<c-b>"
