@@ -35,7 +35,7 @@ endif
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-scripts/a.vim.git'
 
 Plugin 'Valloric/YouCompleteMe'
@@ -131,6 +131,9 @@ endif
 set hlsearch    " highlight the search result
 set nu          " print out the line number
 colorscheme molokai
+
+let NERDTreeDirArrowExpandable = "+"
+let NERDTreeDirArrowCollapsible = "-"
 
 " NERDTree git indicator
 let g:NERDTreeIndicatorMapCustom = {
