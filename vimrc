@@ -249,4 +249,5 @@ if has("cscope") && file_readable("/usr/bin/cscope")
 	set csverb
 endif
 
+set ignorecase
 
