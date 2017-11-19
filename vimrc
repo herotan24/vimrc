@@ -250,3 +250,7 @@ if has("cscope") && file_readable("/usr/bin/cscope")
 endif
 
 set ignorecase
+
+set ts=4
+set expandtab
+
