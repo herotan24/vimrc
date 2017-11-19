@@ -5,7 +5,7 @@
             --enable-gui=auto \
             --enable-cscope \
             --enable-multibyte \
-            --prefix=/usr/local \
+            --prefix=/usr \
 
 make VIMRUNTIMEDIR=/usr/share/vim/vim80
 make install
