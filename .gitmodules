@@ -55,3 +55,6 @@
 [submodule "bundle/project.tar.gz"]
 	path = bundle/project.tar.gz
 	url = https://github.com/vim-scripts/project.tar.gz.git
+[submodule "build/vim"]
+	path = build/vim
+	url = https://github.com/vim/vim.git
