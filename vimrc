@@ -26,7 +26,7 @@ filetype off                  " required before vundle
 " set the runtime path to include Vundle and initialize
 if has("unix")
   set rtp+=$VIM/vimfiles/bundle/Vundle.vim
-  call vundle#begin()
+  call vundle#begin('$VIM/vimfiles/bundle')
 elseif has("win32")
   set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
   call vundle#begin('$HOME/vimfiles/bundle/')
@@ -223,7 +223,7 @@ let g:ctrlp_custom_ignore = {
 if has('Win32')
 	let g:ycm_global_ycm_extra_conf = 'C:\Users\Administrator\vimfiles\.ycm_extra_conf.py'
 else
-	let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+	let g:ycm_global_ycm_extra_conf = '$VIM/vimfiles/.ycm_extra_conf.py'
 endif
 
 " 
@@ -250,4 +250,3 @@ if has("cscope") && file_readable("/usr/bin/cscope")
 endif
 
 set ignorecase
-
