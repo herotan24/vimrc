@@ -5,5 +5,4 @@ echo 'original software to be uninstall:'
 echo $TARGET_SOFT
 apt remove $TARGET_SOFT
 
-apt-get install libncurses5-dev
-apt-get install ctags
+apt-get -y install libncurses5-dev ctags cscope
