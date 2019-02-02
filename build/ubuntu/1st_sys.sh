@@ -6,3 +6,4 @@ echo $TARGET_SOFT
 apt remove $TARGET_SOFT
 
 apt-get install libncurses5-dev
+apt-get install ctags
