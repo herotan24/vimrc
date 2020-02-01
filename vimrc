@@ -56,6 +56,7 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'vim-scripts/Mark'
 Plugin 'vim-scripts/cscope.vim'
+Plugin 'chazy/cscope_maps'
 Plugin 'vim-scripts/project.tar.gz'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -232,22 +233,6 @@ let g:UltiSnipsExpandTrigger = "<c-b>"
 " let g:UltiSnipsJumpForwardTrigger = "<tab>"
 " let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-" cscope
-
-if has("cscope") && file_readable("/usr/bin/cscope")
-	set csprg=/usr/bin/cscope
-	set csto=0
-	set cst
-	set nocsverb
-	" add any database in current directory
-	if filereadable("cscope.out")
-		cs add cscope.out
-	" else add database pointed to by environment
-	elseif $CSCOPE_DB != ""
-		cs add $CSCOPE_DB
-	endif
-	set csverb
-endif
 
 set ignorecase
 
