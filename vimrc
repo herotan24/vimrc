@@ -58,6 +58,7 @@ Plugin 'vim-scripts/Mark'
 Plugin 'vim-scripts/cscope.vim'
 Plugin 'chazy/cscope_maps'
 Plugin 'vim-scripts/project.tar.gz'
+Plugin 'guns/xterm-color-table.vim'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'

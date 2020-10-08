@@ -61,3 +61,6 @@
 [submodule "bundle/cscope_maps"]
 	path = bundle/cscope_maps
 	url = git@github.com:chazy/cscope_maps.git
+[submodule "bundle/xterm-color-table.vim"]
+	path = bundle/xterm-color-table.vim
+	url = https://github.com/guns/xterm-color-table.vim.git
