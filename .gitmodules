@@ -56,7 +56,7 @@
 	path = bundle/project.tar.gz
 	url = https://github.com/vim-scripts/project.tar.gz.git
 [submodule "build/vim"]
-	path = build/vim
+	path = vim/vim
 	url = https://github.com/vim/vim.git
 [submodule "bundle/cscope_maps"]
 	path = bundle/cscope_maps
