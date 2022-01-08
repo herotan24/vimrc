@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/sh
+
+export INSTALL_DIR=/usr/local
 
 ./configure --with-features=huge \
             --enable-pythoninterp=yes \
@@ -8,9 +10,9 @@
             --enable-gui=auto \
             --enable-cscope \
             --enable-multibyte \
-            --prefix=/usr/local \
+            --prefix=${INSTALL_DIR} \
 
-make VIMRUNTIMEDIR=/usr/share/vim/vim80
+make VIMRUNTIMEDIR=${INSTALL_DIR}/share/vim/vim82
 make install
 
 ln -s /usr/local/bin/vim /usr/local/bin/vi
