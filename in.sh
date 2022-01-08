@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sys_vim_path=/usr/share/vim
+sys_vim_path=/usr/local/share/vim
 sys_vim_files=$sys_vim_path/vimfiles
 sys_vim_vimrc=$sys_vim_path/vimrc
 
