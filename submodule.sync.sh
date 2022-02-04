@@ -2,7 +2,7 @@
 
 while true
 do
-    git submodule update --recursive
+    git submodule update --init --recursive
     if [ $? != 0 ]
     then
         echo "fail"
