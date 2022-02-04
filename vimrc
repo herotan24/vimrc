@@ -32,22 +32,22 @@ elseif has("win32")
   call vundle#begin('$HOME/vimfiles/bundle/')
 endif
 
-"Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 "Plugin 'tpope/vim-fugitive'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'vim-scripts/a.vim.git'
 "
 "Plugin 'Valloric/YouCompleteMe'
-"Plugin 'tomasr/molokai'
-"
-"Plugin 'jlanzarotta/bufexplorer'
-"
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
-"
+Plugin 'tomasr/molokai'
+
+Plugin 'jlanzarotta/bufexplorer'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 "Plugin 'vim-scripts/taglist.vim'
-"Plugin 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 "
 "Plugin 'majutsushi/tagbar'
 "Plugin 'vim-scripts/TaskList.vim'
@@ -114,7 +114,7 @@ if has('mouse')
   set mouse=a
 endif
 
-"colorscheme molokai
+colorscheme molokai
 
 " Switch syntax highlighting on when the terminal has colors or when using the
 " GUI (which always has colors).
@@ -155,17 +155,17 @@ endif
 "nnoremap <C-j> <C-w>j
 "nnoremap <C-k> <C-w>k
 "nnoremap <C-l> <C-w>l
-"
-"nnoremap <silent> <C-n>      :NERDTreeToggle<CR>
+
+nnoremap <silent> <C-n>      :NERDTreeToggle<CR>
 "nnoremap <silent> <F8>       :TlistToggle<CR>
 "nnoremap <silent> <F7>       :TagbarToggle<CR>
 "nnoremap          <leader>td :TagbarToggle<CR> :TaskList<CR>
 "
-"" air line
-"set laststatus=2
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline_theme = "badwolf"
-"
+" air line
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = "badwolf"
+
 "" taglist
 "let g:Tlist_Use_Right_Window = 1
 "let g:Tlist_Exit_OnlyWindow = 1
