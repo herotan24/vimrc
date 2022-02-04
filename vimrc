@@ -33,6 +33,7 @@ elseif has("win32")
 endif
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'hari-rangarajan/CCTree'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
