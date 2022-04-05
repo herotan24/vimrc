@@ -63,6 +63,7 @@ Plugin 'kien/ctrlp.vim'
 "
 "" plugin from http://vim-scripts.org/vim/scripts.html
 "" Plugin 'L9'
+Plugin 'Yggdroot/LeaderF'
 
 call vundle#end()
 
@@ -238,3 +239,19 @@ set expandtab
 "
 noremap gf *<C-o>
 "
+" LeaderF
+let g:Lf_ReverseOrder = 1
+nnoremap <leader>ff :Leaderf file<CR>
+nnoremap <leader>ft :Leaderf tag<CR>
+let g:Lf_PreviewResult = {
+            \ 'File': 1,
+            \ 'Buffer': 1,
+            \ 'Mru': 1,
+            \ 'Tag': 1,
+            \ 'BufTag': 1,
+            \ 'Function': 1,
+            \ 'Line': 1,
+            \ 'Colorscheme': 1,
+            \ 'Rg': 1,
+            \ 'Gtags': 1
+            \}
