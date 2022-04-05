@@ -231,8 +231,8 @@ let g:airline_theme = "badwolf"
 "" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "
 "
-"set ignorecase
+set ignorecase
 "
-"set ts=4
-"set expandtab
+set ts=4
+set expandtab
 "
