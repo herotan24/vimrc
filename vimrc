@@ -236,3 +236,5 @@ set ignorecase
 set ts=4
 set expandtab
 "
+noremap gf *<C-o>
+"
