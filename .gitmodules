@@ -46,9 +46,6 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "bundle/Mark"]
-	path = bundle/Mark
-	url = https://github.com/vim-scripts/Mark.git
 [submodule "bundle/cscope.vim"]
 	path = bundle/cscope.vim
 	url = https://github.com/vim-scripts/cscope.vim.git
@@ -70,3 +67,6 @@
 [submodule "bundle/LeaderF"]
 	path = bundle/LeaderF
 	url = https://github.com/Yggdroot/LeaderF.git
+[submodule "bundle/vim-mark"]
+	path = bundle/vim-mark
+	url = https://github.com/Yggdroot/vim-mark.git

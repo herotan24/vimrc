@@ -55,7 +55,6 @@ Plugin 'kien/ctrlp.vim'
 "Plugin 'SirVer/ultisnips'
 "Plugin 'honza/vim-snippets'
 "
-"Plugin 'vim-scripts/Mark'
 "Plugin 'vim-scripts/cscope.vim'
 "Plugin 'chazy/cscope_maps'
 "Plugin 'vim-scripts/project.tar.gz'
@@ -64,6 +63,7 @@ Plugin 'kien/ctrlp.vim'
 "" plugin from http://vim-scripts.org/vim/scripts.html
 "" Plugin 'L9'
 Plugin 'Yggdroot/LeaderF'
+Plugin 'Yggdroot/vim-mark' " mark.vim
 
 call vundle#end()
 
