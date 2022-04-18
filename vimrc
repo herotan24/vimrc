@@ -148,10 +148,10 @@ endif
 "    \ }
 "
 "" key-maps
-"nnoremap [q :cprev<CR>
-"nnoremap ]q :cnext<CR>
-"nnoremap [Q :cfirst<CR>
-"nnoremap ]Q :clast<CR>
+nnoremap [p :cprev<CR>
+nnoremap ]p :cnext<CR>
+nnoremap [P :cfirst<CR>
+nnoremap ]P :clast<CR>
 "
 "nnoremap <C-h> <C-w>h
 "nnoremap <C-j> <C-w>j
