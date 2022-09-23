@@ -39,7 +39,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'vim-scripts/a.vim.git'
 "
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomasr/molokai'
 
 Plugin 'jlanzarotta/bufexplorer'
@@ -47,7 +47,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-"Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/taglist.vim'
 Plugin 'kien/ctrlp.vim'
 "
 "Plugin 'majutsushi/tagbar'
@@ -64,6 +64,7 @@ Plugin 'kien/ctrlp.vim'
 "" Plugin 'L9'
 Plugin 'Yggdroot/LeaderF'
 Plugin 'Yggdroot/vim-mark' " mark.vim
+Plugin 'vim-scripts/TagHighlight'
 
 call vundle#end()
 
@@ -159,7 +160,6 @@ nnoremap ]P :clast<CR>
 "nnoremap <C-l> <C-w>l
 
 nnoremap <silent> <C-n>      :NERDTreeToggle<CR>
-"nnoremap <silent> <F8>       :TlistToggle<CR>
 "nnoremap <silent> <F7>       :TagbarToggle<CR>
 "nnoremap          <leader>td :TagbarToggle<CR> :TaskList<CR>
 "
@@ -168,13 +168,14 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = "badwolf"
 
-"" taglist
-"let g:Tlist_Use_Right_Window = 1
-"let g:Tlist_Exit_OnlyWindow = 1
-"let g:Tlist_GainFocus_On_ToggleOpen = 1
-"let g:Tlist_Highlight_Tag_On_BufEnter = 1
-"let g:Tlist_Auto_Highlight_Tag = 1
-"let g:Tlist_Close_On_Select = 1
+" taglist
+nnoremap <silent> <F8>       :TlistToggle<CR>
+let g:Tlist_Use_Right_Window = 1
+let g:Tlist_Exit_OnlyWindow = 1
+let g:Tlist_GainFocus_On_ToggleOpen = 1
+let g:Tlist_Highlight_Tag_On_BufEnter = 1
+let g:Tlist_Auto_Highlight_Tag = 1
+let g:Tlist_Close_On_Select = 1
 "
 "" ctrlp.vim
 "" Change the default mapping and the default command to invoke CtrlP:
@@ -239,19 +240,67 @@ set expandtab
 "
 noremap gf *<C-o>
 "
+if has("cscope")
+    set csprg=/usr/bin/cscope
+    set csto=0 " use cscope data base first
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+        " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set csverb
+
+    nnoremap <leader>csa :cs find a <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>csc :cs find c <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>csd :cs find d <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>cse :cs find e <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>csf :cs find f <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>csg :cs find g <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>csi :cs find i <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>css :cs find s <C-R>=expand("<cword>")<CR><CR>
+    nnoremap <leader>cst :cs find t <C-R>=expand("<cword>")<CR><CR>
+
+    nnoremap <leader>cso :cs add cscope.out<CR>
+    nnoremap <leader>csk :cs kill cscope.out<CR>
+
+    set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+endif
+
 " LeaderF
 let g:Lf_ReverseOrder = 1
+let g:Lf_WildIgnore = {
+                        \ 'dir' : ['.svn', '.git'],
+                        \ 'file' : ['*.o', '*.ko']
+                        \}
 nnoremap <leader>ff :Leaderf file<CR>
 nnoremap <leader>ft :Leaderf tag<CR>
-let g:Lf_PreviewResult = {
-            \ 'File': 1,
-            \ 'Buffer': 1,
-            \ 'Mru': 1,
-            \ 'Tag': 1,
-            \ 'BufTag': 1,
-            \ 'Function': 1,
-            \ 'Line': 1,
-            \ 'Colorscheme': 1,
-            \ 'Rg': 1,
-            \ 'Gtags': 1
-            \}
+"let g:Lf_PreviewResult = {
+"            \ 'File': 1,
+"            \ 'Buffer': 1,
+"            \ 'Mru': 1,
+"            \ 'Tag': 1,
+"            \ 'BufTag': 1,
+"            \ 'Function': 1,
+"            \ 'Line': 1,
+"            \ 'Colorscheme': 1,
+"            \ 'Rg': 1,
+"            \ 'Gtags': 1
+"            \}
+
+hi GlobalVariable cterm=NONE ctermfg=Brown
+hi Member cterm=NONE ctermfg=Green
+hi DefinedName cterm=NONE ctermfg=LightGray
+
+"让vim记忆上次编辑的位置
+autocmd BufReadPost *
+           \ if line("'\"")>0&&line("'\"")<=line("$") |
+            \   exe "normal g'\"" |
+            \ endif
+"让vim记忆上次编辑的位置
+
+" for vim-mark
+nnoremap <leader>n :MarkClear<CR>
