@@ -24,7 +24,10 @@ set nocompatible
 filetype off
 
 " set the runtime path to include Vundle and initialize
-if has("unix")
+if has("mac")
+  set rtp+=~/.vim/vimfiles/bundle/Vundle.vim
+  call vundle#begin('~/.vim/vimfiles/bundle')
+elseif has("unix")
   set rtp+=$VIM/vimfiles/bundle/Vundle.vim
   call vundle#begin('$VIM/vimfiles/bundle')
 elseif has("win32")
