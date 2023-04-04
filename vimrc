@@ -42,7 +42,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'vim-scripts/a.vim.git'
 "
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomasr/molokai'
 
 Plugin 'jlanzarotta/bufexplorer'
