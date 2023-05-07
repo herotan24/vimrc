@@ -386,3 +386,6 @@ autocmd BufReadPost *
 nnoremap <leader>n :MarkClear<CR>
 
 set guifont=Monaco:h14
+
+# file format
+nnoremap <leader>jfmt <Esc>:%!python3 -m json.tool<CR>
