@@ -91,7 +91,8 @@ set ttimeout		" time out for key codes
 set ttimeoutlen=100	" wait up to 100ms after Esc for special key
 
 " 当一行内容显示超过窗口宽度时，不换行显示
-set nowrap
+" set nowrap
+"set wrap
 
 " 实时搜索
 if has('reltime')
