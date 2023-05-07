@@ -389,3 +389,5 @@ set guifont=Monaco:h14
 
 # file format
 nnoremap <leader>jfmt <Esc>:%!python3 -m json.tool<CR>
+
+nnoremap <leader>vgrep <Esc>:vimgrep /<C-R>=expand("<cword>")<CR>/ **/* <CR>
