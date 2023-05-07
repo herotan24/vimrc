@@ -384,3 +384,5 @@ autocmd BufReadPost *
 
 " for vim-mark
 nnoremap <leader>n :MarkClear<CR>
+
+set guifont=Monaco:h14
