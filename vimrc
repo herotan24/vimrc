@@ -70,6 +70,8 @@ Plugin 'Yggdroot/LeaderF'
 Plugin 'Yggdroot/vim-mark' " mark.vim
 Plugin 'vim-scripts/TagHighlight'
 
+Plugin 'WolfgangMehner/bash-support'
+
 call vundle#end()
 
 filetype plugin indent on    " required
@@ -160,6 +162,8 @@ endif
 "" key-maps
 nnoremap <F9> :cprev<CR>
 nnoremap <F10> :cnext<CR>
+nnoremap <S-TAB> :cprev<CR>
+nnoremap <TAB> :cnext<CR>
 nnoremap <leader><F9> :cfirst<CR>
 nnoremap <leader><F10> :cfirst<CR>
 "
@@ -305,7 +309,10 @@ let g:SrcExpl_nextDefKey = "<F12>"
 "else
 "	let g:ycm_global_ycm_extra_conf = '$VIM/vimfiles/.ycm_extra_conf.py'
 "endif
-"
+if has("mac")
+  let g:ycm_global_ycm_extra_conf = '/Users/tanyuhua/.vim/vimfiles/.ycm_extra_conf.py'
+endif
+
 "" 
 "" " better key bindings for UltiSnipsExpandTrigger
 "let g:UltiSnipsExpandTrigger = "<c-b>"
@@ -321,7 +328,7 @@ set expandtab
 noremap gf *<C-o>
 "
 if has("cscope")
-    set csprg=/usr/bin/cscope
+    "set csprg=/usr/bin/cscope
     set csto=0 " use cscope data base first
     set cst
     set nocsverb
@@ -384,6 +391,29 @@ autocmd BufReadPost *
 
 " for vim-mark
 nnoremap <leader>n :MarkClear<CR>
+
+" for tab
+set tabstop=8
+"set softtabstop=8
+"set shiftwidth=8
+set cindent
+set smartindent
+set autoindent
+
+vmap <leader>fc :!clang-format -style=file<CR>
+nmap <leader>fc ggvG<leader>cf<C-o><C-o>
+
+"YCM
+"let g:ycm_auto_trigger = 0
+imap <silent> <C-l> <Plug>(YCMToggleSignatureHelp)
+let g:ycm_enable_semantic_highlighting=1
+nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
+nnoremap <leader>ygd :YcmCompleter GoTo<CR>
+nnoremap <leader>ygr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>ygt :YcmCompleter GoToType<CR>
+nnoremap <leader>ygcr :YcmCompleter GoToCallers<CR>
+let g:ycm_use_clangd=1
 
 set guifont=Monaco:h14
 
