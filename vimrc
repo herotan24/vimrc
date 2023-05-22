@@ -324,8 +324,6 @@ endif
 "
 set ignorecase
 "
-set ts=4
-set expandtab
 "
 noremap gf *<C-o>
 "
@@ -403,7 +401,7 @@ set smartindent
 set autoindent
 
 vmap <leader>fc :!clang-format -style=file<CR>
-nmap <leader>fc ggvG<leader>cf<C-o><C-o>
+nmap <leader>fc ggvG<leader>fc<C-o><C-o>
 
 "YCM
 "let g:ycm_auto_trigger = 0
