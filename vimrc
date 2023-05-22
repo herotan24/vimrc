@@ -28,8 +28,8 @@ if has("mac")
   set rtp+=~/.vim/vimfiles/bundle/Vundle.vim
   call vundle#begin('~/.vim/vimfiles/bundle')
 elseif has("unix")
-  set rtp+=$VIM/vimfiles/bundle/Vundle.vim
-  call vundle#begin('$VIM/vimfiles/bundle')
+  set rtp+=~/.vim/vimfiles/bundle/Vundle.vim
+  call vundle#begin('~/.vim/vimfiles/bundle')
 elseif has("win32")
   set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
   call vundle#begin('$HOME/vimfiles/bundle/')
@@ -311,6 +311,8 @@ let g:SrcExpl_nextDefKey = "<F12>"
 "endif
 if has("mac")
   let g:ycm_global_ycm_extra_conf = '/Users/tanyuhua/.vim/vimfiles/.ycm_extra_conf.py'
+elseif has('unix') 
+  let g:ycm_global_ycm_extra_conf = '~/.vim/vimfiles/.ycm_extra_conf.py'
 endif
 
 "" 
