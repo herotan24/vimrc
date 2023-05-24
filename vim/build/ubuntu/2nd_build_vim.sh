@@ -12,7 +12,7 @@ export INSTALL_DIR=/usr/local
             --enable-multibyte \
             --prefix=${INSTALL_DIR} \
 
-make VIMRUNTIMEDIR=${INSTALL_DIR}/share/vim/vim82
+make VIMRUNTIMEDIR=${INSTALL_DIR}/share/vim/vim90
 make install
 
 ln -s /usr/local/bin/vim /usr/local/bin/vi
