@@ -1,20 +1,24 @@
 #!/bin/sh
 
-sys_vim_path=/usr/local/share/vim
-sys_vim_files=$sys_vim_path/vimfiles
-sys_vim_vimrc=$sys_vim_path/vimrc
 
-if [ -d $sys_vim_files ]
+INSTALL_PATH=~/.vim
+INSTALL_VIMFILES_PATH=$INSTALL_PATH/vimfiles
+INSTALL_VIMRC_PATH=$INSTALL_PATH/vimrc
+SOURCE_DIR=$(cd `dirname $0`; pwd)
+
+mkdir -p $INSTALL_PATH
+
+if [ -d $INSTALL_VIMFILES_PATH ]
 then
-    echo "backuping $sys_vim_files"
-    mv $sys_vim_files $sys_vim_files.$$$$
+    echo "backuping $INSTALL_VIMFILES_PATH"
+    mv $INSTALL_VIMFILES_PATH $INSTALL_VIMFILES_PATH.$$$$
 fi
 
-if [ -f $sys_vim_vimrc ]
+if [ -f $INSTALL_VIMRC_PATH ]
 then
-    echo "backuping $sys_vim_vimrc"
-    mv $sys_vim_vimrc $sys_vim_vimrc.$$$$
+    echo "backuping $INSTALL_VIMRC_PATH"
+    mv $INSTALL_VIMRC_PATH $INSTALL_VIMRC_PATH.$$$$
 fi
 
-ln -s `pwd` $sys_vim_files
-ln -s `pwd`/vimrc $sys_vim_vimrc
+ln -s $SOURCE_DIR $INSTALL_VIMFILES_PATH
+ln -s $SOURCE_DIR/vimrc $INSTALL_VIMRC_PATH
