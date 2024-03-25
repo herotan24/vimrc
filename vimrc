@@ -40,7 +40,7 @@ Plugin 'hari-rangarajan/CCTree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-"Plugin 'vim-scripts/a.vim.git'
+Plugin 'vim-scripts/a.vim.git'
 "
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomasr/molokai'
