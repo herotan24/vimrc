@@ -161,7 +161,9 @@ endif
 "
 "" key-maps
 nnoremap <F9> :cprev<CR>
+nnoremap <C-k> :cprev<CR>
 nnoremap <F10> :cnext<CR>
+nnoremap <C-j> :cnext<CR>
 nnoremap <S-TAB> :cprev<CR>
 nnoremap <TAB> :cnext<CR>
 nnoremap <leader><F9> :cfirst<CR>
