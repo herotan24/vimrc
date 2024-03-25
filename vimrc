@@ -55,7 +55,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'wenlongche/SrcExpl'
 "
 "Plugin 'majutsushi/tagbar'
-"Plugin 'vim-scripts/TaskList.vim'
 "Plugin 'SirVer/ultisnips'
 "Plugin 'honza/vim-snippets'
 "
