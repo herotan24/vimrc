@@ -59,8 +59,6 @@ Plugin 'wenlongche/SrcExpl'
 "Plugin 'SirVer/ultisnips'
 "Plugin 'honza/vim-snippets'
 "
-"Plugin 'vim-scripts/cscope.vim'
-"Plugin 'chazy/cscope_maps'
 "Plugin 'vim-scripts/project.tar.gz'
 "Plugin 'guns/xterm-color-table.vim'
 "
