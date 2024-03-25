@@ -54,12 +54,9 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'wenlongche/SrcExpl'
 "
-"Plugin 'majutsushi/tagbar'
 "Plugin 'SirVer/ultisnips'
 "Plugin 'honza/vim-snippets'
 "
-"Plugin 'vim-scripts/project.tar.gz'
-"Plugin 'guns/xterm-color-table.vim'
 "
 "" plugin from http://vim-scripts.org/vim/scripts.html
 "" Plugin 'L9'
