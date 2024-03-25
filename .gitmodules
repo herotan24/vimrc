@@ -52,3 +52,6 @@
 [submodule "bundle/vim-mark"]
 	path = bundle/vim-mark
 	url = https://github.com/Yggdroot/vim-mark.git
+[submodule "bundle/codeium.vim"]
+	path = bundle/codeium.vim
+	url = https://github.com/Exafunction/codeium.vim.git
