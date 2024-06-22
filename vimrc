@@ -65,7 +65,7 @@ Plugin 'Yggdroot/vim-mark' " mark.vim
 Plugin 'vim-scripts/TagHighlight'
 
 Plugin 'WolfgangMehner/bash-support'
-Plugin 'Exafunction/codeium.vim'
+"Plugin 'Exafunction/codeium.vim'
 
 call vundle#end()
 
