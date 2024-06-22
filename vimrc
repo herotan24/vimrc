@@ -387,12 +387,13 @@ autocmd BufReadPost *
 nnoremap <leader>n :MarkClear<CR>
 
 " for tab
-set tabstop=8
-"set softtabstop=8
-"set shiftwidth=8
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set cindent
 set smartindent
 set autoindent
+set expandtab
 
 vmap <leader>fc :!clang-format -style=file<CR>
 nmap <leader>fc ggvG<leader>fc<C-o><C-o>
