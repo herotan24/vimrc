@@ -16,7 +16,7 @@ make distclean
 #--enable-pythoninterp=yes \
 #--with-python-config-dir=/usr/lib64/python2.7/config/ \
 
-make VIMRUNTIMEDIR=${INSTALL_DIR}/share/vim/vim90 -j2
+make VIMRUNTIMEDIR=${INSTALL_DIR}/share/vim/vim90 -j
 make install
 
 ln -s /usr/local/bin/vim /usr/local/bin/vi
