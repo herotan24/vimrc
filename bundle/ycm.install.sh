@@ -2,7 +2,8 @@
 
 while true
 do
-    ./install.py --clangd-completer --go-completer --java-completer --verbose
+    #./install.py --clangd-completer --go-completer --java-completer --verbose
+    ./install.py --clangd-completer --verbose
     if [ $? != 0 ]
     then
         echo "fail"
