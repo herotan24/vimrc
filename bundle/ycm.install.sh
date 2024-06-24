@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd ./YouCompleteMe
+
 while true
 do
     #./install.py --clangd-completer --go-completer --java-completer --verbose
@@ -13,3 +15,5 @@ do
     fi
     sleep 1
 done
+
+cd -
