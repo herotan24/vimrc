@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# for absl
 ABSL_DIR=absl
 cp -rf $ABSL_DIR YouCompleteMe/third_party/ycmd/cpp/
 
@@ -40,3 +41,5 @@ else
     echo "操作完成。"
 fi
 
+# for clang
+cp libclang-14.0.0-x86_64-unknown-linux-gnu.tar.bz2 ./YouCompleteMe/third_party/ycmd/clang_archives/
