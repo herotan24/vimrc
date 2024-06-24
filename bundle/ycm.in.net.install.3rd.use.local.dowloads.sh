@@ -33,9 +33,8 @@ END { if (!found) print "NO_MATCH" }
 
 # 检查是否有匹配的内容
 if grep -q "NO_MATCH" tmpfile; then
-    echo "Error: 未找到匹配的内容。"
+    echo "Error: 未找到匹配的内容。请检查是否已替换。"
     rm tmpfile
-    exit 1
 else
     mv tmpfile $FILE
     echo "操作完成。"
