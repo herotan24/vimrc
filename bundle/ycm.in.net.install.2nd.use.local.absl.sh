@@ -1,5 +1,8 @@
 #!/bin/sh
 
+ABSL_DIR=absl
+cp -rf $ABSL_DIR YouCompleteMe/third_party/ycmd/cpp/
+
 # 定义要修改的文件
 FILE="YouCompleteMe/third_party/ycmd/cpp/CMakeLists.txt"
 
