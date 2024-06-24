@@ -15,6 +15,9 @@ function recurse_submodules {
     done
 }
 
+# 从仓库根目录开始
+cd ..
+
 # 开始执行脚本的主入口点，从当前目录开始
 recurse_submodules .
 
