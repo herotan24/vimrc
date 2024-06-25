@@ -44,4 +44,5 @@ fi
 cp -rf libclang-14.0.0-x86_64-unknown-linux-gnu.tar.bz2 ./YouCompleteMe/third_party/ycmd/clang_archives/
 
 # for clangd
-cp -rf clangd-14.0.0-x86_64-unknown-linux-gnu.tar.bz2 /home/vim/vimrc.6.23.1/bundle/YouCompleteMe/third_party/ycmd/third_party/clangd/cache/
+mkdir -p ./YouCompleteMe/third_party/ycmd/third_party/clangd/cache
+cp -rf clangd-14.0.0-x86_64-unknown-linux-gnu.tar.bz2 ./YouCompleteMe/third_party/ycmd/third_party/clangd/cache/
