@@ -5,7 +5,7 @@ cd ./YouCompleteMe
 while true
 do
     #./install.py --clangd-completer --go-completer --java-completer --verbose
-    ./install.py --clangd-completer --verbose
+    ./install.py --clangd-completer --verbose --force-sudo
     if [ $? != 0 ]
     then
         echo "fail"
