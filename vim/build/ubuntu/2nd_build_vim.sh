@@ -17,4 +17,4 @@ export INSTALL_DIR=/usr/local
 make VIMRUNTIMEDIR=${INSTALL_DIR}/share/vim/vim90 -j2
 make install
 
-ln -s /usr/local/bin/vim /usr/local/bin/vi
+ln -sf /usr/local/bin/vim /usr/local/bin/vi

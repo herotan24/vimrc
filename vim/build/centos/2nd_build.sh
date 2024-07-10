@@ -19,4 +19,4 @@ make distclean
 make VIMRUNTIMEDIR=${INSTALL_DIR}/share/vim/vim90 -j
 make install
 
-ln -s /usr/local/bin/vim /usr/local/bin/vi
+ln -sf /usr/local/bin/vim /usr/local/bin/vi
