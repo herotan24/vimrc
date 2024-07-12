@@ -471,7 +471,12 @@ nnoremap <Leader>djnb <Plug>VimspectorJumpToNextBreakpoint
 nnoremap <Leader>djpb <Plug>VimspectorJumpToPreviousBreakpoint
 nnoremap <Leader>djpc <Plug>VimspectorJumpToProgramCounter
 
+" 查看变量
 nnoremap <Leader>dv <Plug>VimspectorBalloonEval
+" 查看内存，需要光标处于有效地址位置
 nnoremap <Leader>dm :call vimspector#ReadMemory() <CR>
+" 添加表达式
+nnoremap <Leader>dw :call vimspector#AddWatch(expand('<cword>'))<CR>
+vnoremap <Leader>dw "zy:call vimspector#AddWatch(@z)<CR>
 
 let g:ycm_semantic_triggers =  { 'VimspectorPrompt': [ '.', '->', ':', '<' ] }
