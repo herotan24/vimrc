@@ -65,7 +65,7 @@ Plugin 'Yggdroot/vim-mark' " mark.vim
 Plugin 'vim-scripts/TagHighlight'
 
 Plugin 'WolfgangMehner/bash-support'
-"Plugin 'Exafunction/codeium.vim'
+Plugin 'Exafunction/codeium.vim'
 Plugin 'puremourning/vimspector'
 
 call vundle#end()
@@ -423,6 +423,11 @@ set guifont=Monaco:h14
 nnoremap <leader>jfmt <Esc>:%!python3 -m json.tool<CR>
 
 nnoremap <leader>vgrep <Esc>:vimgrep /<C-R>=expand("<cword>")<CR>/ **/* <CR>
+
+" codium
+inoremap <C-j> <Plug>(codeium-next)
+inoremap <C-k> <Plug>(codeium-previous)
+
 " vimspector
 let g:vimspector_base_dir='$HOME/.vim/vimfiles/bundle/vimspector'
 packadd! vimspector
