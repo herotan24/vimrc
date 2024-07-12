@@ -55,3 +55,6 @@
 [submodule "bundle/codeium.vim"]
 	path = bundle/codeium.vim
 	url = https://github.com/Exafunction/codeium.vim.git
+[submodule "bundle/vimspector"]
+	path = bundle/vimspector
+	url = https://github.com/puremourning/vimspector.git
