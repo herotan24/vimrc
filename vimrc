@@ -187,7 +187,13 @@ let g:Tlist_Close_On_Select = 1
 let g:Tlist_Show_Menu=1
 let g:Tlist_Show_One_File=1
 let g:Tlist_Auto_Update=1
-let g:Tlist_Ctags_Cmd="/usr/bin/ctags"
+if has("mac")
+    let g:Tlist_Ctags_Cmd="/opt/homebrew/bin/ctags"
+elseif has("unix")
+    let g:Tlist_Ctags_Cmd="/usr/bin/ctags"
+elseif has("win32")
+    let g:Tlist_Ctags_Cmd="ctags.exe"
+endif
 let g:Tlist_Display_Prototype=0
 let g:Tlist_Display_Tag_Scope=1
 
