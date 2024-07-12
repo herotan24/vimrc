@@ -416,6 +416,8 @@ nnoremap <leader>ygr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>ygt :YcmCompleter GoToType<CR>
 nnoremap <leader>ygcr :YcmCompleter GoToCallers<CR>
 let g:ycm_use_clangd=1
+let g:ycm_auto_hover='None'
+set completeopt=menuone,menu
 
 set guifont=Monaco:h14
 
