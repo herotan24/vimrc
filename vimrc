@@ -66,6 +66,7 @@ Plugin 'vim-scripts/TagHighlight'
 
 Plugin 'WolfgangMehner/bash-support'
 "Plugin 'Exafunction/codeium.vim'
+Plugin 'puremourning/vimspector'
 
 call vundle#end()
 
@@ -304,7 +305,7 @@ let g:SrcExpl_nextDefKey = "<F12>"
 "	let g:ycm_global_ycm_extra_conf = '$VIM/vimfiles/.ycm_extra_conf.py'
 "endif
 if has("mac")
-  let g:ycm_global_ycm_extra_conf = '/Users/tanyuhua/.vim/vimfiles/.ycm_extra_conf.py'
+  let g:ycm_global_ycm_extra_conf = '$HOME/.vim/vimfiles/.ycm_extra_conf.py'
 elseif has('unix') 
   let g:ycm_global_ycm_extra_conf = '~/.vim/vimfiles/.ycm_extra_conf.py'
 endif
@@ -416,3 +417,48 @@ set guifont=Monaco:h14
 nnoremap <leader>jfmt <Esc>:%!python3 -m json.tool<CR>
 
 nnoremap <leader>vgrep <Esc>:vimgrep /<C-R>=expand("<cword>")<CR>/ **/* <CR>
+" vimspector
+let g:vimspector_base_dir='$HOME/.vim/vimfiles/bundle/vimspector'
+packadd! vimspector
+syntax enable
+" filetype plugin indent on " already enabled
+" key bindings for vimspector
+" let g:vimspector_enable_mappings = 'HUMAN'
+" let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+" nnoremap <Leader>dl <Plug>VimspectorLaunch
+" nnoremap <Leader>dl :call vimspector#Launch({'configuration': 'cpptools'})<CR>
+nnoremap <Leader>dl :call vimspector#LaunchWithSettings({'configuration': 'cpptools'})<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+" nnoremap <leader>dll :call vimspector#LaunchWithSettings('cpptools')<CR>
+nnoremap <Leader>dc <Plug>VimspectorContinue
+nnoremap <Leader>ds <Plug>VimspectorStop
+nnoremap <Leader>dr <Plug>VimspectorRestart
+nnoremap <Leader>dp <Plug>VimspectorPause
+
+nnoremap <Leader>dbw <Plug>VimspectorBreakpoints
+nnoremap <Leader>dbl <Plug>VimspectorToggleBreakpoint
+nnoremap <Leader>dbc <Plug>VimspectorToggleConditionalBreakpoint
+nnoremap <Leader>dbf <Plug>VimspectorAddFunctionBreakpoint
+
+nnoremap <Leader>dgc <Plug>VimspectorGoToCurrentLine
+nnoremap <Leader>drc <Plug>VimspectorRunToCursor
+
+nnoremap <Leader>dn <Plug>VimspectorStepOver
+nnoremap <Leader>di <Plug>VimspectorStepInto
+nnoremap <Leader>do <Plug>VimspectorStepOut
+nnoremap <Leader>dn <Plug>VimspectorStepOver
+nnoremap <Leader>di <Plug>VimspectorStepInto
+nnoremap <Leader>do <Plug>VimspectorStepOut
+nnoremap <Leader>dd <Plug>VimspectorDisassemble
+
+nnoremap <Leader>duf <Plug>VimspectorUpFrame
+nnoremap <Leader>ddf <Plug>VimspectorDownFrame
+
+nnoremap <Leader>djnb <Plug>VimspectorJumpToNextBreakpoint
+nnoremap <Leader>djpb <Plug>VimspectorJumpToPreviousBreakpoint
+nnoremap <Leader>djpc <Plug>VimspectorJumpToProgramCounter
+
+nnoremap <Leader>dv <Plug>VimspectorBalloonEval
+nnoremap <Leader>dm :call vimspector#ReadMemory() <CR>
+
+let g:ycm_semantic_triggers =  { 'VimspectorPrompt': [ '.', '->', ':', '<' ] }

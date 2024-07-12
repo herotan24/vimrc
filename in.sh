@@ -22,3 +22,7 @@ fi
 
 ln -s $SOURCE_DIR $INSTALL_VIMFILES_PATH
 ln -s $SOURCE_DIR/vimrc $INSTALL_VIMRC_PATH
+
+# for vimspector
+mkdir -p $INSTALL_PATH/pack/plugins/opt
+ln -sf $INSTALL_PATH/vimfiles/bundle/vimspector $INSTALL_PATH/pack/plugins/opt/vimspector
