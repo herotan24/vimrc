@@ -418,6 +418,7 @@ nnoremap <leader>ygcr :YcmCompleter GoToCallers<CR>
 let g:ycm_use_clangd=1
 let g:ycm_auto_hover='None'
 set completeopt=menuone,menu
+" let g:ycm_confirm_extra_conf = 0
 
 set guifont=Monaco:h14
 
