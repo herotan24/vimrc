@@ -434,7 +434,7 @@ inoremap <C-j> <Plug>(codeium-next)
 inoremap <C-k> <Plug>(codeium-previous)
 
 " vimspector
-let g:vimspector_base_dir='$HOME/.vim/vimfiles/bundle/vimspector'
+let g:vimspector_base_dir=expand('$HOME/.vim/vimfiles/bundle/vimspector')
 packadd! vimspector
 syntax enable
 " filetype plugin indent on " already enabled
@@ -442,8 +442,8 @@ syntax enable
 " let g:vimspector_enable_mappings = 'HUMAN'
 " let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 " nnoremap <Leader>dl <Plug>VimspectorLaunch
-" nnoremap <Leader>dl :call vimspector#Launch({'configuration': 'cpptools'})<CR>
-nnoremap <Leader>dl :call vimspector#LaunchWithSettings({'configuration': 'cpptools'})<CR>
+" nnoremap <Leader>dl :wa<CR>:call vimspector#LaunchWithSettings({'configuration': 'cpptools'})<CR>
+nnoremap <Leader>dl :wa<CR>:call vimspector#Launch()<CR>
 nnoremap <Leader>de :call vimspector#Reset()<CR>
 " nnoremap <leader>dll :call vimspector#LaunchWithSettings('cpptools')<CR>
 nnoremap <Leader>dc <Plug>VimspectorContinue
@@ -475,6 +475,7 @@ nnoremap <Leader>djpb <Plug>VimspectorJumpToPreviousBreakpoint
 nnoremap <Leader>djpc <Plug>VimspectorJumpToProgramCounter
 
 " 查看变量
+highlight VimspectorBalloonEval guifg=white guibg=navy
 nnoremap <Leader>dv <Plug>VimspectorBalloonEval
 " 查看内存，需要光标处于有效地址位置
 nnoremap <Leader>dm :call vimspector#ReadMemory() <CR>
