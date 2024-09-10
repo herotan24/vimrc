@@ -23,3 +23,18 @@ let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
 # so vimrc should be like below
 let g:vimspector_base_dir='/Users/tanyuhua/.vim/vimfiles/bundle/vimspector'
+
+# FAQ
+1. 远程登录启动的 gdb 可能会有权限问题，如：
+lldb-mi a.out
+(gdb)
+    -file-exec-and-symbols "a.out"
+    ^done
+    (gdb)
+    =library-loaded,id="/Users/tanyuhua/work/leetcodingExercise/a.out",target-name="/Users/tanyuhua/work/leetcodingExercise/a.out",host-name="/Users/tanyuhua/work/leetcodingExercise/a.out",symbols-loaded="1",symbols-path="/Users/tanyuhua/work/leetcodingExercise/a.out.dSYM/Contents/Resources/DWARF/a.out",loaded_addr="-",size="16384"
+
+    r
+    &"error: process exited with status -1 (this is a non-interactive debug session, cannot get permission to debug processes.)\n"
+
+解决方案：
+现在本地启动 tmux，然后再远程 attach 这个 session
