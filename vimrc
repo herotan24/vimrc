@@ -430,6 +430,13 @@ nnoremap <leader>jfmt <Esc>:%!python3 -m json.tool<CR>
 nnoremap <leader>vgrep <Esc>:vimgrep /<C-R>=expand("<cword>")<CR>/ **/* <CR>
 
 " codium
+" 关闭自动提示
+let g:codeium_manual = v:true
+" You might want to use `CycleOrComplete()` instead of `CycleCompletions(1)`.
+" This will make the forward cycling of suggestions also trigger the first
+" suggestion manually.
+" 设置提示快捷键
+inoremap <C-l> <Cmd>call codeium#CycleOrComplete()<CR>
 inoremap <C-j> <Plug>(codeium-next)
 inoremap <C-k> <Plug>(codeium-previous)
 
