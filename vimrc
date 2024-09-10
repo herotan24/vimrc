@@ -316,6 +316,8 @@ elseif has('unix')
   let g:ycm_global_ycm_extra_conf = '~/.vim/vimfiles/.ycm_extra_conf.py'
 endif
 
+set keywordprg=man\ 3
+
 "" 
 "" " better key bindings for UltiSnipsExpandTrigger
 "let g:UltiSnipsExpandTrigger = "<c-b>"
