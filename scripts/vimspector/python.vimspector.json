@@ -1,0 +1,18 @@
+{
+    "version": "1.0.0",
+    "configurations": {
+        "Python: Main": {
+            "adapter": "debugpy",
+            "configuration": {
+                "name": "Python: Main",
+                "python": "/path/to/python3",
+                "type": "python",
+                "request": "launch",
+                "program": "${workspaceFolder}/XXXXX.py",
+                "args": [],
+                "console": "integratedTerminal"
+            }
+        }
+    }
+}
+
