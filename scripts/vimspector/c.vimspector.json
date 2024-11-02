@@ -1,0 +1,30 @@
+{
+  "configurations": {
+    "cpptools": {
+      "adapter": "vscode-cpptools",
+      "variables": {
+        "BUILDME": {
+          "shell": "sh build.sh"
+        },
+        "arch": {
+          "shell": "uname -m"
+        }
+      },
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceRoot}/a.out",
+        "stopAtEntry": true,
+        "MIMode": "lldb",
+        "MIDebuggerPath": "/Users/tanyuhua/.vim/vimfiles/bundle/vimspector/gadgets/macos/download/vscode-cpptools/1.17.5/root/extension/debugAdapters/lldb-mi/bin/lldb-mi",
+        "logging": {
+            "engineLogging": false,
+            "programOutput": true,
+            "trace": false,
+            "traceResponse": false,
+            "exceptions": true
+        },
+        "targetArchitecture": "${arch}"
+      }
+    }
+  }
+}
