@@ -64,9 +64,10 @@ Plugin 'Yggdroot/LeaderF'
 Plugin 'Yggdroot/vim-mark' " mark.vim
 Plugin 'vim-scripts/TagHighlight'
 
-Plugin 'WolfgangMehner/bash-support'
+"Plugin 'WolfgangMehner/bash-support'
 Plugin 'Exafunction/codeium.vim'
 Plugin 'puremourning/vimspector'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
@@ -137,7 +138,7 @@ if &t_Co > 2 || has("gui_running")
   let c_curly_error=1
 endif
 
-
+" NERDTree
 "let NERDTreeDirArrowExpandable = "+"
 "let NERDTreeDirArrowCollapsible = "-"
 "
@@ -154,6 +155,9 @@ endif
 "    \ "Unknown"   : "*",
 "    \ }
 "
+"let g:NERDTreeIgnore = ['\.o$', '\.a$', '\.so$', '\.test', '\.files', '\.out', '\.bak']
+let g:NERDTreeIgnore = ['\.o$', '\.a$',  '\.test', '\.files', '\.out', 'tags', '\.bak']
+
 "" key-maps
 nnoremap <F9> :cprev<CR>
 nnoremap <C-k> :cprev<CR>
@@ -161,13 +165,15 @@ nnoremap <F10> :cnext<CR>
 nnoremap <C-j> :cnext<CR>
 nnoremap <leader><F9> :cfirst<CR>
 nnoremap <leader><F10> :cfirst<CR>
+nnoremap <leader>cc :cclose<CR>
 "
 "nnoremap <C-h> <C-w>h
 "nnoremap <C-j> <C-w>j
 "nnoremap <C-k> <C-w>k
 "nnoremap <C-l> <C-w>l
 
-nnoremap <silent> <C-n>      :NERDTreeToggle<CR>
+nnoremap <silent> <C-n>n      :NERDTreeToggle<CR>
+nnoremap <silent> <C-n>f      :NERDTreeFind<CR>
 "nnoremap <silent> <F7>       :TagbarToggle<CR>
 "nnoremap          <leader>td :TagbarToggle<CR> :TaskList<CR>
 "
@@ -441,7 +447,8 @@ inoremap <C-j> <Plug>(codeium-next)
 inoremap <C-k> <Plug>(codeium-previous)
 
 " vimspector
-let g:vimspector_base_dir=expand('$HOME/.vim/vimfiles/bundle/vimspector')
+"let g:vimspector_base_dir=expand('$HOME/.vim/vimfiles/bundle/vimspector')
+let g:vimspector_base_dir='/home/tanyuhua/.vim/vimfiles/bundle/vimspector'
 packadd! vimspector
 syntax enable
 " filetype plugin indent on " already enabled
@@ -491,3 +498,56 @@ nnoremap <Leader>dw :call vimspector#AddWatch(expand('<cword>'))<CR>
 vnoremap <Leader>dw "zy:call vimspector#AddWatch(@z)<CR>
 
 let g:ycm_semantic_triggers =  { 'VimspectorPrompt': [ '.', '->', ':', '<' ] }
+"let g:vimspector_adapters = { 'delve': { 'executable': '/home/tanyuhua/go/bin/dlv' } }
+
+nnoremap <Leader>fg :vimgrep /<C-r><C-w>/ **<CR>:copen<CR>
+
+" go
+"let g:ycm_go_binary_path = expand('~/go/bin/gopls')
+let g:go_test_flags = ["-v"]
+autocmd FileType go nmap <leader>gb  :w<CR><Plug>(go-build)
+autocmd FileType go nmap <leader>gR  :w<CR><Plug>(go-run)
+autocmd FileType go nmap <leader>gt  :w<CR><Plug>(go-test)
+autocmd FileType go nmap <leader>gr  :w<CR><Plug>(go-referrers)
+autocmd FileType go nmap <leader>gd  :w<CR><Plug>(go-def)
+autocmd FileType go nmap <leader>gn  :w<CR><Plug>(go-rename)
+autocmd FileType go nmap <leader>gf  :w<CR><Plug>(go-fmt)
+let g:go_list_type = "quickfix"
+let g:go_fmt_autosave = 0
+let g:go_fmt_command = "goimports"  " 使用 goimports 进行格式化
+let g:go_tab_width = 4  " 设置 tab 宽度为 4
+let g:go_import_manager = 'goimports'
+"let g:go_version_warning = 0 无用
+autocmd BufEnter * call SetupGoBuild()
+function! SetupGoBuild()
+    let cwd = getcwd()
+    if cwd =~ 'aisys-reporter'
+        "setlocal makeprg=bash\ ./scripts/build.sh\ app_only\ &&\ ad\ dput\ output
+        "setlocal makeprg=bash\ ./scripts/build.sh\ app_only\ &&\ ad\ dput\ output
+        "setlocal makeprg=sh\ -c\ 'bash\ ./scripts/build.sh\ app_only\ &&\ ad\ dput\ output_bin'
+        setlocal makeprg=sh\ -c\ 'bash\ ./scripts/build.sh\ &&\ ad\ dput\ output'
+        setlocal errorformat=vet:\ %f:%l:%c:\ %m,%f:%l:%c:\ %m,%f:\ %l:\ %m
+        command! MakeAndAdDput make | if !len(getqflist()) | call system("ad dput output_bin") | echo "Done" | endif
+    endif
+endfunction
+"./scripts/build.sh: 95: ./scripts/build.sh: Syntax error: "(" unexpected
+
+" 临时：用 goimports/gofumpt，避开 gopls 格式化通道
+let g:go_fmt_command = "goimports"
+let g:go_imports_mode = "gopls" " 默认需要 remote gopls 服务器，如果检查时发现 “vim-go: initializing gopls” 卡住很久，需要检查 /run/user/xxxx/ 目录是否存在以及权限问题
+"let g:go_gopls_options = ['-remote=']   " 空值表示关闭 remote, 使用本进程模式
+" 用于查看 vim-go debug 信息
+"let g:go_debug = ['lsp']
+"let g:go_log_path = expand('~/vim-go.log')
+
+" 新建一个 tab，打开当前文件， 并关闭 set nu，方便 tmux 拷贝
+" ntcp: new tab for copy, excp: exit copy mode
+nnoremap <leader>ntcp :tabe %<CR>:set nonumber<CR>
+nnoremap <leader>excp :set number<CR>:tabclose<CR>
+"let g:go_term_enabled = 1
+
+" window
+" 窗口最大化
+nnoremap <C-w><C-z> :wincmd _ \| wincmd \|<CR>
+
+set nowrapscan

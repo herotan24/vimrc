@@ -58,3 +58,12 @@
 [submodule "bundle/vimspector"]
 	path = bundle/vimspector
 	url = https://github.com/puremourning/vimspector.git
+[submodule "bundle/SrcExpl"]
+	path = bundle/SrcExpl
+	url = https://github.com/wenlongche/SrcExpl.git
+[submodule "bundle/TagHighlight"]
+	path = bundle/TagHighlight
+	url = https://github.com/vim-scripts/TagHighlight.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
