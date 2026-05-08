@@ -122,9 +122,13 @@ endif
 
 colorscheme molokai
 set t_Co=256
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+if $TERM_PROGRAM !=# "Apple_Terminal"
+  set termguicolors
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+else
+  set notermguicolors
+endif
 
 " Switch syntax highlighting on when the terminal has colors or when using the
 " GUI (which always has colors).
